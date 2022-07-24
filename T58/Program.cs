@@ -22,16 +22,16 @@
 10 6 24 49
 */
 
-int [,] GetMatrix(int rows, int columns)
+int[,] GetMatrix(int rows, int columns)
 {
-    int [,] matrix = new int[rows,columns];
+    int[,] matrix = new int[rows, columns];
     Random randomizer = new Random();
 
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < columns; j++)
         {
-            matrix[i,j] = randomizer.Next(1,10);
+            matrix[i, j] = randomizer.Next(1, 10);
         }
     }
     return matrix;
@@ -49,17 +49,17 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int [,] ProductOfMatrix(int [,] first, int [,] second)
+int[,] ProductOfMatrix(int[,] first, int[,] second)
 {
-    int [,] resultMatrix = new int [first.GetLength(0), first.GetLength(1)];
+    int[,] resultMatrix = new int[first.GetLength(0), first.GetLength(1)];
     for (int i = 0; i < resultMatrix.GetLength(0); i++)
     {
         for (int j = 0; j < resultMatrix.GetLength(1); j++)
         {
-            resultMatrix[i,j] = first[i,j] * second [i,j];
+            resultMatrix[i, j] = first[i, j] * second[i, j];
         }
     }
-return resultMatrix;
+    return resultMatrix;
 }
 
 Console.WriteLine("Введите число строк:");
