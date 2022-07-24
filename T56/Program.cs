@@ -44,19 +44,19 @@ void GetMinRow(int[,] matrix)
     int minsumm = 0;
     int summ = 0;
     List<int> minI = new List<int>();
-    
+
     for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            minsumm = minsumm + matrix[0,j];
-        }
-        
+    {
+        minsumm = minsumm + matrix[0, j];
+    }
+
     for (int i = 1; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            summ = summ + matrix[i,j];
+            summ = summ + matrix[i, j];
         }
-        if(summ < minsumm)
+        if (summ < minsumm)
         {
             minsumm = summ;
         }
@@ -66,21 +66,21 @@ void GetMinRow(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            summ = summ + matrix[i,j];
+            summ = summ + matrix[i, j];
         }
-        if(summ == minsumm)
-            {
+        if (summ == minsumm)
+        {
             minI.Add(i);
-            }
+        }
         summ = 0;
     }
-      
+
     Console.WriteLine($"Минимальная сумма элементов в строке: {minsumm}");
     Console.WriteLine("Номер строки (строк) с минимальной суммой:");
     foreach (var item in minI)
-{
-	Console.WriteLine(item);
-}
+    {
+        Console.WriteLine(item);
+    }
 }
 
 Console.WriteLine("Введите число строк:");
